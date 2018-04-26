@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    mini_portile2 (2.3.0)
+    nokogiri (1.8.2)
+      mini_portile2 (~> 2.3.0)
+    nokogiri-happymapper (0.6.0)
+      nokogiri (~> 1.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  nokogiri-happymapper
+
+BUNDLED WITH
+   1.16.1
