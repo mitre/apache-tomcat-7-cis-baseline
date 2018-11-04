@@ -2,6 +2,8 @@
 
 You can use this profile to evalute your Tomcat-7 instance to the CIS Benchmark.
 
+The controls **still use** the `xml` resource and function correctly but **help / interest welcome** on completing the `tomcat_*` resources (see the start in the [libraries](./libraries/) directory)
+
 #### NOTE: Tomcat Resources
 
 Our current implamentation in the controls use the InSpec `xml` resource which is a bit complicated but works fine. 
@@ -9,8 +11,6 @@ Our current implamentation in the controls use the InSpec `xml` resource which i
 We are working on moving to a custom set of `tomcat_*` resources for much clearner and more direct InSpec controls. 
 
 ***the custom `tomcat_*` resource is in very early alpha not yet complete and is not complete***
-
-The controls **still use** the `xml` resource and function correctly but **help / interest welcome** on completing the `tomcat_*` resources.
 
 ### NOTICE  
 
