@@ -2,7 +2,7 @@
 
 You can use this profile to evalute your Tomcat-7 instance to the CIS Benchmark.
 
-The controls **still use** the `xml` resource and function correctly but **help / interest welcome** on completing the `tomcat_*` resources (see the start in the [libraries](./libraries/) directory)
+The controls **still use** the `xml` resource and function correctly but **help / interest welcome** on completing the `tomcat_*` resources (see the start in the [libraries](./libraries/) directory) in the other branches off `master`.
 
 #### NOTE: Tomcat Resources
 
