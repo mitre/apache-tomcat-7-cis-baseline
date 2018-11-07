@@ -12,6 +12,19 @@ We are working on moving to a custom set of `tomcat_*` resources for much clearn
 
 ***the custom `tomcat_*` resource is in very early alpha not yet complete and is not complete***
 
+## Versioning and State of Development
+This project uses the [Semantic Versioning Policy](https://semver.org/). 
+
+### Branches
+The master branch contains the latest version of the software leading up to a new release. 
+
+Other branches contain feature-specific updates. 
+
+### Tags
+Tags indicate official releases of the project.
+
+Please note 0.x releases are works in progress (WIP) and may change at any time.   
+
 ### NOTICE  
 
 © 2018 The MITRE Corporation.  
