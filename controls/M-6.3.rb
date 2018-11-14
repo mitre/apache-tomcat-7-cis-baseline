@@ -15,7 +15,7 @@ http://tomcat.apache.org/tomcat-7.0-doc/config/http.html  "
   tag "cis_control": ["No CIS Control", "6.1"]
   tag "cis_level": 1
   tag "audit text": "Review server.xml to ensure the Connector’s scheme
-attribute is set to http for Connectorsperating over HTTP. Also ensure the
+attribute is set to http for Connectors operating over HTTP. Also ensure the
 Connector’s scheme attribute is set to https for
 Connectors operating over HTTPS.
 "

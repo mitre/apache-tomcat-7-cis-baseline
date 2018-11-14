@@ -79,7 +79,7 @@ Set the logEffectiveWebXml value in the context.xml in each of applications to
 true
 "
   tag "Default Value": "If logEffectiveWebXml not specified, the default value
-of false is used; If metadatacomplete not specified, the default value of false
+of false is used; If metadata-complete is not specified, the default value of false
 is used;"
 
   begin

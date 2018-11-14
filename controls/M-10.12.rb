@@ -40,7 +40,7 @@ NOTE: This requires SSL to be configured. "
   tag "cis_id": "10.12"
   tag "cis_control": ["No CIS Control", "6.1"]
   tag "cis_level": 2
-  tag "audit text": "Ensure $CATALINA_HOME/conf/web.xml has theattribute set to
+  tag "audit text": "Ensure $CATALINA_HOME/conf/web.xml has the attribute set to
 CONFIDENTIAL.
 # grep transport-guarantee $CATALINA_HOME/conf/web.xml
 "

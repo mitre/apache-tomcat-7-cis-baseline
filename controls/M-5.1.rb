@@ -36,7 +36,7 @@ authorization options. Use the DataSourceRealm instead. The UserDatabaseRealm
 is not intended for large-scale installations. It is intended for small-scale,
 relatively static environments. The JAASRealm is not widely used and therefore
 the code is not as mature as the other realms. Additional testing is
-recommended before using this realm. "
+recommended before using this realm."
   impact 0.5
   tag "ref": "1. http://tomcat.apache.org/tomcat-7.0-doc/realm-howto.html  "
   tag "severity": "medium"

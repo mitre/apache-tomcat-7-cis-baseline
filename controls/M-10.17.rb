@@ -27,7 +27,7 @@ http://tomcat.apache.org/tomcat-7.0-doc/config/valve.html "
   tag "cis_control": ["No CIS Control", "6.1"]
   tag "cis_level": 2
   tag "audit text": "Ensure Connector elements have the enableLookups attribute
-set to falser enableLookups does not exist.
+set to false if enableLookups does not exist.
 # grep enableLookups $CATALINA_HOME/conf/server.xml
 "
   tag "fix": "In Connector elements, set the enableLookups attribute to false

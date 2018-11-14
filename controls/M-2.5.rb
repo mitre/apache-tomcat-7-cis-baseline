@@ -1,8 +1,8 @@
 control "M-2.5" do
   title "2.5 Disable client facing Stack Traces (Scored)"
   desc  "When a runtime error occurs during request processing, Apache Tomcat
-will display debugging information to the requestor. It is recommended that
-such debug information be withheld from the requestor. Debugging information,
+will display debugging information to the requester. It is recommended that
+such debug information be withheld from the requester. Debugging information,
 such as that found in call stacks, often contains sensitive information that
 may useful to an attacker. By preventing Tomcat from providing this
 information, the risk of leaking sensitive information to a potential attacker
@@ -17,7 +17,7 @@ https://tomcat.apache.org/tomcat-7.0doc/api/org/apache/catalina/deploy/ErrorPage
   tag "cis_level": 1
   tag "audit text": "Perform the following to determine if Tomcat is configured
 to prevent sending debug
-information to the requestor Ensure an <error-page> element is defined in$
+information to the requester Ensure an <error-page> element is defined in$
 CATALINA_HOME/conf/web.xml. Ensure the <error-page> element has an
 <exception-type> child element with a
 value of java.lang.Throwable. Ensure the <error-page> element has a <location>
@@ -29,7 +29,7 @@ $CATALINA_HOME/webapps/<APP_NAME>/WEBINF/web.xml
 "
   tag "fix": "Perform the following to prevent Tomcat from providing debug
 information to the
-requestor during runtime errors: Create a web page that contains the logic or
+requester during runtime errors: Create a web page that contains the logic or
 message you wish to invoke when
 encountering a runtime error. For example purposes, assume this page is located
 at
@@ -48,5 +48,5 @@ The resulting entry will look as follows:
 "
   tag "Default Value": "Tomcat’s default configuration does not include an
 <error-page> element in\n$CATALINA_HOME/conf/web.xml. Therefore, Tomcat will
-provide debug information to\nthe requestor by default.\n"
+provide debug information to\nthe requester by default.\n"
 end

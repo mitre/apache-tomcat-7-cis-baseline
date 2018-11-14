@@ -37,7 +37,7 @@ of $CATALINA_BASE be tomcat_admin:tomcat. It is also recommended that the
 permission on $CATALINA_BASE prevent read, write, and execute for the world
 (orwx) and prevent write access to the group (g-w). The security of processes
 and data that traverse or depend on Tomcat may become compromised if the
-$CATALINA_BASE is not secured. "
+$CATALINA_BASE is not secured."
   impact 0.5
   tag "severity": "medium"
   tag "cis_id": "4.2"
