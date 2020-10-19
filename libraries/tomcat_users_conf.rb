@@ -30,11 +30,11 @@ class TomcatUsers
   has_many :users, User, tag: 'user'
 end
 
-require 'pry'; binding.pry
+# require 'pry'; binding.pry
 
-test = TomcatUsers.parse('/Users/aaronl/tomcat-users.xml')
+# test = TomcatUsers.parse('/Users/aaronl/tomcat-users.xml')
 
-puts 'hi'
+# puts 'hi'
 
 # class TomcatUsersConf < Inspec.resource(1)
 #   name 'tomcat_users_conf'

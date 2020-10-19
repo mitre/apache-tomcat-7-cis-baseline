@@ -1,5 +1,5 @@
 
-require 'utils/file_reader'
+require 'inspec/utils/file_reader'
 
 class TomcatPropFile < Inspec.resource(1)
   name 'tomcat_properties_file'
