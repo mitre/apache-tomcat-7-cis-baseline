@@ -1,37 +1,124 @@
-# (WIP) InSpec CIS Apache Tomcat v7 Benchmark
+# (WIP) apache-tomcat-7-cis-baseline
 
-You can use this profile to evalute your Tomcat-7 instance to the CIS Benchmark.
+InSpec Profile to validate the secure configuration of apache-tomcat-7-cis-baseline, against [CIS'](https://www.cisecurity.org/cis-benchmarks/) Apache Tomcat 7 Benchmark
 
-The controls **still use** the `xml` resource and function correctly but **help / interest welcome** on completing the `tomcat_*` resources (see the start in the [libraries](./libraries/) directory) in the other branches off `master`.
+## Getting Started  
+It is intended and recommended that InSpec run this profile from a __"runner"__ host (such as a DevOps orchestration server, an administrative management system, or a developer's workstation/laptop) against the target remotely over __ssh__.
 
-#### NOTE: Tomcat Resources
+The latest versions and installation options are available at the [InSpec](http://inspec.io/) site.
 
-Our current implamentation in the controls use the InSpec `xml` resource which is a bit complicated but works fine. 
+## Tailoring to Your Environment
+The following inputs must be configured in an inputs ".yml" file for the profile to run correctly for your specific environment. More information about InSpec inputs can be found in the [InSpec Profile Documentation](https://www.inspec.io/docs/reference/profiles/).
 
-We are working on moving to a custom set of `tomcat_*` resources for much clearner and more direct InSpec controls. 
+```yaml
+# Description: Tomcat home Directory
+tomcat_home: ''
 
-***the custom `tomcat_*` resource is in very early alpha not yet complete and is not complete***
+# Description: Tomcat Directory for additional servers
+tomcat_base: ''
 
-## Versioning and State of Development
-This project uses the [Semantic Versioning Policy](https://semver.org/). 
+# Description: Tomcat App Directory
+tomcat_app_dir: ''
 
-### Branches
-The master branch contains the latest version of the software leading up to a new release. 
+# Description: Tomcat library Directory
+tomcat_lib_dir: ''
 
-Other branches contain feature-specific updates. 
+# Description: Tomcat service Name
+tomcat_service_name: ''
 
-### Tags
-Tags indicate official releases of the project.
+# Description: Tomcat username
+tomcat_user: ''
 
-Please note 0.x releases are works in progress (WIP) and may change at any time.   
+# Description: Port of the tomcat instance
+tomcat_port: ''
 
-### NOTICE  
+# Description: Server Info value
+tomcat_server_info: ''
 
-© 2018 The MITRE Corporation.  
+# Description: Server Number value
+tomcat_server_number: ''
 
-Approved for Public Release; Distribution Unlimited. Case Number 18-3678.  
+# Description: Server Built value
+tomcat_server_built: ''
+
+# Description: Tomcat server configuration file
+tomcat_conf_server: ''
+
+# Description: Tomcat web configuration file
+tomcat_conf_web: ''
+
+# Description: Group owner of files/directories
+tomcat_group: ''
+
+# Description: User owner of files/directories
+tomcat_owner: ''
+
+# Description: A list of Realms that should not be enabled
+tomcat_realms_list: []
+                    
+# Description: List of extraneous resources that should not exist
+tomcat_extraneous_resource_list: []
+```
+
+# Running This Baseline Directly from Github
+
+```
+# How to run
+inspec exec https://github.com/mitre/apache-tomcat-7-cis-baseline/archive/master.tar.gz -t ssh:// --input-file=<path_to_your_inputs_file/name_of_your_inputs_file.yml> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
+```
+
+### Different Run Options
+
+  [Full exec options](https://docs.chef.io/inspec/cli/#options-3)
+
+## Running This Baseline from a local Archive copy 
+
+If your runner is not always expected to have direct access to GitHub, use the following steps to create an archive bundle of this baseline and all of its dependent tests:
+
+(Git is required to clone the InSpec profile using the instructions below. Git can be downloaded from the [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) site.)
+
+When the __"runner"__ host uses this profile baseline for the first time, follow these steps: 
+
+```
+mkdir profiles
+cd profiles
+git clone https://github.com/mitre/apache-tomcat-7-cis-baseline
+inspec archive apache-tomcat-7-cis-baseline
+inspec exec <name of generated archive> -t ssh:// --input-file=<path_to_your_inputs_file/name_of_your_inputs_file.yml> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
+```
+For every successive run, follow these steps to always have the latest version of this baseline:
+
+```
+cd apache-tomcat-7-cis-baseline
+git pull
+cd ..
+inspec archive apache-tomcat-7-cis-baseline --overwrite
+inspec exec <name of generated archive> -t ssh:// --input-file=<path_to_your_inputs_file/name_of_your_inputs_file.yml> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
+```
+
+## Viewing the JSON Results
+
+The JSON results output file can be loaded into __[heimdall-lite](https://heimdall-lite.mitre.org/)__ for a user-interactive, graphical view of the InSpec results. 
+
+The JSON InSpec results file may also be loaded into a __[full heimdall server](https://github.com/mitre/heimdall)__, allowing for additional functionality such as to store and compare multiple profile runs.
+
+## Authors
+* Mohamed El-Sharkawi - [HackerShark](https://github.com/HackerShark)
+
+## Special Thanks 
+* Shivani Karikar - [karikarshivani](https://github.com/karikarshivani)
+
+## Contributing and Getting Help
+To report a bug or feature request, please open an [issue](https://github.com/mitre/apache-tomcat-7-cis-baseline/issues/new).
+
+### NOTICE
+
+© 2018-2020 The MITRE Corporation.
+
+Approved for Public Release; Distribution Unlimited. Case Number 18-3678.
 
 ## NOTICE
+
 MITRE hereby grants express written permission to use, reproduce, distribute, modify, and otherwise leverage this software to the extent permitted by the licensed terms provided in the LICENSE.md file included with this project.
 
 ### NOTICE  
@@ -41,3 +128,7 @@ This software was produced for the U. S. Government under Contract Number HHSM-5
 No other use other than that granted to the U. S. Government, or to those acting on behalf of the U. S. Government under that Clause is authorized without the express written permission of The MITRE Corporation.  
 
 For further information, please contact The MITRE Corporation, Contracts Management Office, 7515 Colshire Drive, McLean, VA  22102-7539, (703) 983-6000.  
+
+### NOTICE
+
+CIS Benchmarks are published by the Center for Internet Security (CIS), see: https://www.cisecurity.org/.
